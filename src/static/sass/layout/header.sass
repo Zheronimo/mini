@@ -1,0 +1,57 @@
+header
+	position: absolute
+	top: 84px
+	left: 0
+	right: 0
+	z-index: 99
+.header-wrapp
+	display: flex
+	align-items: center
+	justify-content: space-between
+
+.header-logo a
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 150px
+	height: 150px
+	border: 2px solid #fff
+	border-radius: 50%
+	font-family: 'Montserrat', sans-serif;
+	color:  #ffffff;
+	font-size: 45px;
+	line-height: 45px;
+	text-decoration: none
+	text-transform: uppercase
+.menu
+	list-style: none
+	display: flex
+.menu-item
+	margin-left: 90px
+	position: relative
+	&::after
+		position: absolute
+		top: 0
+		left: 100%
+		margin-left: 40px
+		content: '\\\\'
+		display: block
+		font-size: 18px
+		line-height: 20px
+		color: #fff
+	&:last-child:after
+		display: none
+
+.menu-link
+	font-size: 18px
+	line-height: 20px
+	text-transform: uppercase
+	text-decoration: none
+	color: #ffffff
+	&:hover
+		color: #0d0d0d
+	
+
+
+
+
