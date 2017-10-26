@@ -1,3 +1,5 @@
+$color-yellow: #f39c12
+
 body
 	color: #4d4d4d
 	font-family: "Open Sans", Arial, sans-serif
@@ -23,6 +25,13 @@ h1
 		font-size: 40px
 		font-weight: 300
 		line-height: 60px
+h6
+	color:  #0c0c0c
+	font-size: 20px
+	font-weight: 700
+	line-height: 25px
+	text-transform: uppercase
+	margin: 0
 .btn
 	display: inline-block
 	vertical-align: middle
@@ -39,10 +48,11 @@ h1
 	text-transform: uppercase
 	transition: all 0.5s ease-in-out 
 	&:hover
-		background-color:  #f39c12
-		border: 2px solid #f39c12
+		background-color: $color-yellow
+		border: 2px solid $color-yellow
 		color:  #fff
 		transition: all 0.5s ease-in-out
 
-@import "layout/banner";
-@import "layout/header";
+@import "layout/header"
+@import "layout/banner"
+@import "layout/about"
