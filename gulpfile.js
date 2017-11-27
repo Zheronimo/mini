@@ -38,12 +38,17 @@ gulp.task('sass', function () {
             stream: true
         }));
 });
+gulp.task('img', function(){
+    return gulp.src('src/staic/img/**/*.*')
+    .pipe (gulp.dest('build/static/img/'));
+});
 
 gulp.task('watch', function(){
 	gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
-	gulp.watch('src/static/sass/**/*.sass', gulp.series('sass'))
+    gulp.watch('src/static/sass/**/*.sass', gulp.series('sass'));
+    gulp.watch('src/static/img/**/*.*', gulp.series('img'));
 });
 gulp.task('default', gulp.series(
-	gulp.parallel('pug', 'sass'),
+	gulp.parallel('pug', 'sass', 'img'),
     gulp.parallel('watch', 'serve')
 	));
