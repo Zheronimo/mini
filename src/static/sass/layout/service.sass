@@ -26,9 +26,78 @@
     &:hover span:before
         color: #ffffff
         transition: all 0.3s ease-in-out
-.service-list h6 
+.service-list__item h6 
     margin-bottom: 25px
-.service-list p
+.service-list__item p
     color: #737373
     font-size: 16px
     line-height: 28px
+
+.box-pricing
+    display: flex
+    justify-content: space-between
+    .service-list__icon
+        width: 125px
+        height: 125px
+        margin-left: 0
+        font-size: 32px
+.pricing
+    display: flex
+    align-items: flex-start
+    text-align: center
+.pricing__item
+    width: 250px
+    border: 1px solid #e6e6e6
+    &:first-child
+        border-right: none
+        margin-top: 15px
+    &:last-child
+        border-left: none
+        margin-top: 15px
+.pricing__item.active
+    border-right: none
+    border-left: none
+    border-top: 17px solid $color-yellow
+    border-bottom: 11px solid #e6e6e6
+    background-color: #f2f2f2
+.pricing-header
+    padding: 25px 28px
+.pricing__item.active .pricing-header
+    background-color: $color-yellow
+.pricing__item.active .pricing-footer
+    background-color: #e6e6e6
+.pricing-header__title
+    color: #0d0d0d
+    font-size: 22px
+    font-weight: 700
+    line-height: 25px
+    text-transform: uppercase
+    & span:before
+        content: ''
+        display: block
+        height: 2px
+        width: 50px
+        background-color: $color-yellow
+        margin: 5px auto
+.pricing__item.active .pricing-header__title
+    color: #ffffff
+    & span:before
+        background-color: #ffffff
+.pricing-list li 
+    color: #737373
+    font-size: 15px
+    line-height: 18px
+    padding: 15px
+    border-top: 1px solid #e6e6e6
+    &:last-child
+        border-bottom: 1px solid #e6e6e6
+    &:nth-child(odd)
+        background-color: #fafafa
+.pricing__item.active .pricing-list li 
+    &:nth-child(odd)
+        background-color: #e6e6e6
+.pricing-footer
+    padding: 34px 28px
+    .btn
+        height: 38px
+        padding: 9px 33px 0
