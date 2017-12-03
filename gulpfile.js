@@ -23,14 +23,14 @@ gulp.task('pug', function () {
 gulp.task('sass', function () {
     return gulp.src('src/static/sass/main.sass')
         .pipe(gp.sourcemaps.init())
-        .pipe(gp.sass({}))
+        .pipe(gp.sass().on("error", gp.notify.onError({
+            title: "stile",
+            message: "Error: <%= error.message %>"
+              })))
         .pipe(gp.autoprefixer({
             browsers: ['last 10 versions']
         }))
-        .on("error", gp.notify.onError({
-        message: "Error: <%= error.message %>",
-        title: "stile"
-      	}))
+        
         .pipe(gp.csso())
         .pipe(gp.sourcemaps.write())
         .pipe (gulp.dest('build/static/css/'))
@@ -39,16 +39,21 @@ gulp.task('sass', function () {
         }));
 });
 gulp.task('img', function(){
-    return gulp.src('src/staic/img/**/*.*')
+    return gulp.src('src/static/img/**/*.{png,jpg,gif}')
     .pipe (gulp.dest('build/static/img/'));
+});
+gulp.task('scripts', function(){
+    return gulp.src('src/static/js/main.js')
+    .pipe (gulp.dest('build/static/js/'));
 });
 
 gulp.task('watch', function(){
 	gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
     gulp.watch('src/static/sass/**/*.sass', gulp.series('sass'));
-    gulp.watch('src/static/img/**/*.*', gulp.series('img'));
+    gulp.watch('src/static/img/**/*.png', gulp.series('img'));
+    gulp.watch('src/static/js/main.js', gulp.series('scripts'));
 });
 gulp.task('default', gulp.series(
-	gulp.parallel('pug', 'sass', 'img'),
+	gulp.parallel('pug', 'sass', 'img', 'scripts'),
     gulp.parallel('watch', 'serve')
 	));

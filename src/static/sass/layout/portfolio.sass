@@ -1,0 +1,111 @@
+.nav-tab-list
+    text-align: center
+    margin-bottom: 80px
+.nav-tab-list__item
+    display: inline-block
+    position: relative
+    &:after
+        content: '\\\\'
+        display: inline-block
+        vertical-align: middle
+        font-size: 14px
+        font-weight: 700
+        line-height: 25px
+        color: #a6a6a6
+        margin: 0 18px
+    &:last-child:after
+        display: none
+    &.active .nav-tab-list__link
+        color: $color-yellow
+
+.nav-tab-list__link
+    font-size: 14px
+    font-weight: 700
+    line-height: 25px
+    color: #000
+    text-transform: uppercase
+    &:hover
+        color: $color-yellow
+.hide
+    position: absolute
+    left: 0
+    top: 0
+    height: 0
+    width: 0
+    overflow: hidden
+    z-index: -1
+    opacity: 0
+.tab-cont
+    opacity: 1
+    transition: opacity 0.4s
+    &.hide
+        opacity: 0
+
+.portfolio-list
+    display: flex
+    flex-wrap: wrap
+.portfolio-list__item
+    width: 25%
+    position: relative
+    &:hover .portfolio-list__preview
+        display: block
+    &:hover .portfolio-list__img [class*='icon']
+        display: none
+    &:hover .portfolio-list__title
+        color: $color-yellow
+    &:nth-child(2) .portfolio-list__img, &:nth-child(4) .portfolio-list__img, &:nth-child(5) .portfolio-list__img, , &:nth-child(7) .portfolio-list__img
+        background-color: #b7b7b7 
+    &:hover .portfolio-list__img
+        background-color: #fff
+    &:hover .portfolio-list__img img 
+        opacity: 0.6
+
+.portfolio-list__link
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 2
+.portfolio-list__img
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+    font-size: 58px
+    height: 220px
+    background-color: #c7c7c7
+    img
+        display: block
+        width: 100%
+        min-width: 100% 
+        opacity: 1
+        transition: opacity 0.4s
+.portfolio-list__footer
+    padding: 20px 10px
+    text-align: center
+.portfolio-list__title
+    line-height: 22px
+    color: #0d0d0d
+    font-size: 15px
+    font-weight: 700
+    text-transform: uppercase
+    margin-bottom: 4px
+.portfolio-list__category
+    color: #8c8c8c
+    font-size: 14px
+.portfolio-list__preview
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 98px
+    height: 98px
+    border-radius: 50%
+    background: rgba(243, 156, 18, 0.5) url('../img/plus.png') no-repeat center
+    display: none
+    z-index: 3
+    cursor: pointer
+    &:hover
+        background-color: rgba(243, 156, 18, 0.8)
+
