@@ -1,7 +1,24 @@
 .banner
-	padding-top: 450px
-	padding-bottom: 280px
+	position: relative
+	display: flex
+	align-items: center
+	justify-content: center
+	padding-top: 70px
+	height: calc(100vh + 100px)
+	overflow: hidden
+	text-align: center
 	background: url('../img/banner.jpg') no-repeat center top
-	text-align: center		
-	 
-	
+	background-size: cover
+			
+.banner:after
+	position: absolute
+    bottom: 0
+    left: 0
+    content: ''
+    display: block
+    width: 0
+    height: 0
+    border-bottom: 100px solid #ffffff
+    border-left: 100vw solid transparent	 
+.banner-slider .slick-dots
+	margin-top: 80px
